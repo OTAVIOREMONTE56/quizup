@@ -1,0 +1,66 @@
+/* Mobile-first adaptations shared by every quiz theme. */
+html{ -webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:100px }
+body{min-height:100svh}
+header{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+main{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right));min-height:0}
+footer{padding-bottom:max(24px,env(safe-area-inset-bottom))}
+button,a,input{touch-action:manipulation}
+button{min-height:48px;white-space:normal;line-height:1.45}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--purple);outline-offset:4px}
+h1,h2,h3,p,button,a{overflow-wrap:break-word}
+.hero>*,.options>*,.traits>*,.actions>*,.share-fallback>*{min-width:0}
+.hero-copy{width:100%}
+.hero .primary{max-width:100%;padding:17px 15px}
+.art{width:min(100%,300px)}
+.label1{left:5px}.label2{right:5px}
+.float-label{-webkit-backdrop-filter:blur(12px)}
+h1{font-size:clamp(36px,10.5vw,48px);letter-spacing:-1.5px}
+h1 em{-webkit-background-clip:text}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%}
+.quiz{margin:12px auto 28px}
+.quiz-nav{position:sticky;top:0;z-index:3;background:var(--background);padding-top:env(safe-area-inset-top,0px);padding-bottom:16px;box-shadow:0 8px 12px var(--background)}
+.topline{gap:12px}
+.back{padding:10px 12px;min-width:48px}
+.progress{height:7px;margin:5px 0 0}
+.question-no{display:block;margin-top:20px;line-height:1.7}
+.quiz h2{font-size:clamp(25px,6.5vw,34px);line-height:1.25}
+.hint{line-height:1.6;margin-bottom:20px}
+.options{gap:12px}
+.option{display:grid;grid-template-columns:30px minmax(0,1fr) 18px;gap:10px;padding:15px 12px;min-height:72px;font-size:15px;transition:background-color .15s,border-color .15s;transform:none!important}
+.option .emoji{font-family:'Apple Color Emoji','Segoe UI Emoji',sans-serif;font-size:25px;line-height:1.2}
+.option-text{min-width:0;overflow-wrap:anywhere}
+.option .circle{width:18px;margin:0}
+.primary,.secondary{font-size:15px}
+.primary:hover{transform:none}
+.next{min-height:54px;margin-top:18px}
+.transition{animation:none}
+.hero-copy,.quiz h2,.options,.result,.analysis{animation:enter .22s ease-out}
+.result-heading h1{font-size:clamp(29px,8vw,42px);line-height:1.15}
+.result-card{padding:22px 16px}
+.profile-top{padding:5px 0 20px}
+.profile-top h2{font-size:clamp(25px,7vw,34px);line-height:1.2}
+.description{line-height:1.8}
+.traits,.actions{grid-template-columns:minmax(0,1fr)}
+.traits div{padding:17px}
+.message{padding:18px}
+.actions button{width:100%;min-height:54px;padding:16px 12px}
+.share-fallback{display:grid;grid-template-columns:minmax(0,1fr)}
+.share-fallback .secondary{display:flex;justify-content:center;align-items:center;text-align:center;text-decoration:none;min-height:52px}
+.whatsapp{color:#216c49;border-color:#c4e1cf;background:#f5fff8}
+.restart{width:100%;min-height:52px;border:1px solid #e9d5e3;border-radius:14px;background:#fff;font-size:15px;margin:14px auto}
+.share-link{width:100%;max-width:100%;font:16px 'DM Sans',sans-serif;padding:15px;margin-top:12px}
+#toast{bottom:max(20px,env(safe-area-inset-bottom));width:max-content;max-width:calc(100% - 32px);text-align:center;line-height:1.5}
+.analysis{padding:75px 0}
+@media(min-width:701px){
+ main{padding-left:24px;padding-right:24px;min-height:620px}
+ .hero-copy{width:auto}.art{width:100%}.label1{left:0}.label2{right:0}
+ h1{font-size:clamp(44px,5.6vw,72px);letter-spacing:-2.6px}
+ .facts{gap:22px}.quiz{margin:35px auto}.option{padding:19px 20px;font-size:16px;gap:15px}
+ .result-card{padding:35px}.traits,.actions{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .share-fallback{grid-template-columns:repeat(2,minmax(0,1fr))}.share-fallback .whatsapp{grid-column:1/-1}
+ .restart{width:auto;padding:12px 30px}.analysis{padding:120px 0}
+}
+@media(max-width:350px){header{padding-top:16px;padding-bottom:16px}.logo{font-size:29px}.free{padding:8px 10px}.art{height:205px}.heart{font-size:105px}.orb{width:200px;height:200px}.float-label{font-size:9px;padding:9px}.eyebrow{letter-spacing:1.2px}.profile-emoji{font-size:56px}.result-card{border-radius:20px}.question-no{letter-spacing:1.4px}}
+@media(hover:hover) and (pointer:fine){.option:hover{border-color:var(--pink);background:#fff0f6}.primary:hover{transform:translateY(-2px)}}
+@media(hover:none){.option:not(.selected):hover{border-color:#eadce6;background:#fff}}
+@media(prefers-reduced-motion:reduce){.hero-copy,.quiz h2,.options,.result,.analysis{animation:none}}
